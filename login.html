@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | ZARA Style & Beauty</title>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f8f1ed;
+            background-color: pink;
+            color: darkblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('img/');
+        }
+
+        .login-box {
+            background: wheat;
+            width: 320px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 5px 25px #00000015;
+        }
+
+        h1 {
+            letter-spacing: 4px;
+            font-size: 25px;
+        }
+
+        p {
+            color: darkgreen;
+            font-size: 13px;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 13px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 15px;
+            background: darkblue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #9c5b55;
+        }
+
+        a {
+            color: #9c5b55;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+
+
+    <div class="login-box">
+        <h1>ZARA</h1>
+        <p>STYLE & BEAUTY</p>
+
+        <h2>Welcome Back!</h2>
+        <p>Login to explore your favourite styles.</p>
+
+        <form id="loginForm">
+            <input
+                type="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <input
+                type="password"
+                placeholder="Enter your password"
+                minlength="6"
+                required
+            >
+
+            <button type="submit"><a href="index.html">LOGIN</button></a>
+        </form>
+
+        <p id="message"></p>
+
+        <p>New customer? <a href="#">Create Account</a></p>
+
+        <p><a href="index.html"> <button>← Back to Shopping </button></a></p>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("message").textContent =
+                "Demo login only. Real authentication is not connected yet.";
+        });
+    </script>
+
+
+</body>
+</html>

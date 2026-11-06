@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-----help the page to fit the devices width-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="cart.java"></script>
+    <link rel="file" href="email&pass.html">
+    <link rel="file" href="cart.html">
+    
+    <title>Layout of website</title>
+    
+    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    html{
+scroll-behavior: smooth;
+    }
+    body
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color:pink;
+        
+        text-align: center;
+
+    }
+    .logo {
+        width: 100px;
+        height: auto;
+        object-fit: contain;
+        size-adjust: 10px;
+        float: right;
+        
+    }
+    .brand
+    {
+        
+        border: none;
+        outline: none;
+        box-shadow: none;
+        border: 20px;
+        border-color: darkblue;
+
+    }
+    .brand h2{
+        font-size: 22px;
+        color: white;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .brand p{
+        font-size: 22px;
+        color: wheat;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    }
+    header{
+        background-color: wheat;
+        color: darkblue;
+        padding: 20px;
+        align-items: center;
+        border: none;
+        outline: none;
+        display: flex;
+        margin-left: auto;
+        
+        
+    }
+    .container {
+        
+        padding: 40px;
+        border-radius: 15px;
+        max-width:larger;
+        margin: auto;
+        background-color: wheat;
+    }
+    h1{
+        text-align: center;
+        color: darkslateblue;
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+    
+    button {
+          padding:10px;
+          margin: 4px;
+          border: none;
+          border-radius: 20px;
+          background-color: darkblue;
+          color: wheat;
+          cursor: pointer;
+          
+    }
+    button:hover{
+        background-color: darkgreen;
+    }
+
+
+nav a {
+    text-decoration: none;
+    background-color: navy;
+    color: white;
+    padding: 5px 10px ;
+    font-size: 14px;
+    border-radius: 20px;
+    display:flex;
+}
+nav-btn
+{
+    padding: 5px 12px;
+    font-size: 13px;
+    width: auto;
+}
+
+nav a:hover {
+    background-color: pink;
+    color: darkblue;
+}
+    
+
+
+
+
+
+
+a :visisted{
+     color: rgb(red green blue / alpha);
+     text-decoration: solid;
+     font-size: 40px;
+     border: 20px;
+     border-radius: 20px;
+     border-color: darkmagenta;
+}
+.btn
+{
+    display: inline-block;
+    background-color: pink;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.btn:hover{
+    background-color: pink;
+
+}
+
+.responsive-image
+{
+    max-width: 20px;
+    height: auto;
+    display: block;
+}
+
+
+/* desktop : 3 rows */
+.course-container
+{
+    display: grid;
+    grid-template-rows: repeat(3,minmax( 0,1fr));
+    gap: 20px;
+    max-width: 200px;
+    margin: 20px auto;
+    color: darkblue;
+
+
+}
+
+/* style each card*/
+.card
+{
+    background-color: pink;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    min-width: none;
+    rows-width:auto;
+    grid-template-rows: auto;
+
+}
+.card h2
+{
+     color: darkblue;
+}
+
+.card button
+{
+    background-color: darkblue;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* tablet. 2 rows */
+@media ( max-width:  300px){
+    .course-container
+    {
+     grid-template-columns: repeat((2,minmax(0,1fr)); 
+    }
+}
+/* mobile: 1 rows*/
+@media ( max-width: 300px){
+    body 
+    {
+        padding: 10px;
+
+    }
+.course-container
+{
+    
+    grid-template-rows: 1fr;
+    gap: 15px;
+
+}
+h1
+{
+    font-size: 24px;
+}
+}
+/* footer */ 
+/* email & pass*/
+.login-box
+{
+    background-color:wheat;
+    color: darkblue;
+    padding: 40px;
+    border: 20px;
+    border-radius: 10px;
+    border-color: darkblue;
+
+}
+    </style>
+</head>
+<body>
+    <main>
+    <header>
+        <img src="ind.logo.jpg" alt="logo">
+        <div class="brand">
+        <h1>ZARA Style & Beauty</h1>
+          <p>Welcome to our Online Shopping website</p>
+        <p>New Fashion <br>Meets Beauty</p>
+        </div>
+    </header>
+        
+    </div>
+    
+    
+    <nav>
+        
+    <button><a href="index.html">Home</a></button>
+        
+    <button><a href="products.html">Products</a></button>
+   <button><a href="about.html">About</a></button> 
+    <button><a href="contact.html">Contact</a></button> 
+   <button> <a href="login.html">Login</a></button> 
+</nav>
+
+    <main>
+    <!------Home Page Section-->
+    <section id="Home Page">
+<img src="index.html.jpg" alt="zaara" width="200px " height="250px" >
+<img src="index.html.jpg1.jpg" alt="zaara" width="200px" height="250px">
+<img src="index.html.jpg2.jpg" alt="zaara" height="200px">
+    <h1>Welcome to  Online Shopping </h1>
+<h2>Find your favourite products at the best prices!</h2>
+     
+
+        <p> ​Welcome to Zaara.
+             Quality Products for Every Lifestyle.
+          ​ your ultimate online destination for high-quality . We believe that shopping online should be simple, enjoyable, and completely stress-free. That is why we have carefully curated a diverse collection of top-tier items designed to meet your everyday needs—combining exceptional craftsmanship, style, and everyday value. Whether you are searching for the latest arrivals, upgrading your routine, or looking for the perfect gift, we have 
+        </p>
+        <p>At Zaara, customer satisfaction is at the heart of everything we do. We carefully source our products from trusted partners to ensure premium quality with every order. Shopping with us means enjoying a seamless online experience from start to finish—backed by fast shipping, 100% secure checkout, hassle-free returns, and dedicated customer support ready to assist you at any step.
+         ​Discover Customer Favorites & Exclusive Savings
+​         Explore our best-selling collections today to see what thousands of satisfied shoppers are raving about.
+ Don't forget to join our community—subscribe to our newsletter below to unlock 10% off your first order, 
+ along with exclusive access to special promotions, seasonal sales, and new arrivals delivered directly to your inbox.
+  Step in, browse our catalog.</p>
+    </section>
+   
+    <!------------Brand Section-->
+    
+    <body>
+    <h1>
+Our Selling Products
+
+    </h1>
+    <div class="course container">
+        <div class="card">
+            <article class="card">
+                      <img src="index.html.5.jpg" alt="sarees" width="800px">
+            <h2> Womens Ethnic Wears </h>
+           <p  > (kurtis & sarees )</p>
+            <p class="price"> $999 </p>
+            <p>Easy, soft Wearables</p>
+            <button type="button">Add To Cart </button>
+            <button type="button"> Buy Now </button>
+        </div>
+        
+    
+
+<div class="card">
+    </article class=" card">
+                      <img src="index.html.3jpg.jpg" alt="Jwellery" width="800px">
+    
+            <h2> Artificial & Fasion Jwellery </h2>
+            <p class="price"> $1299</p>
+            <p> Lightweight, low shipping costs, and high perceived value</p>
+            <p>50%-70% OFF</p>
+             <a href="cart.html">
+            <button type="button">Add To Cart </button> </a>
+            <button type="button"> Buy Now </button>
+        </div>
+
+       <div class="card">
+
+                <img src="index.html4.jpg" alt=" beauty " width="800px" >
+            <h2>Beauty & Personal care</h2>
+            <p class="price">$499</p>            
+            <p> Skincare, serums, sunscreen</p>
+            <p> 40%-55% OFF</p>
+
+            
+            <button type="button">Add To Cart </button>
+            <button type="button"> Buy Now </button>
+        </div>
+    </div>
+
+
+    </div>
+
+    
+
+</html>
+
+
+    <section id="List of Products">
+        <article>
+            <h2>Brand Section </h2>
+
+        <p>
+            We believe that online shopping should be seamless, enjoyable, and reliable, which is why we curate only the finest items crafted with care and built to last. From trending new arrivals to everyday must-haves, our collection offers exceptional quality at prices you’ll love. Enjoy fast shipping, safe and encrypted checkout, hassle-free returns, and dedicated customer support with every purchase. Explore our catalog today, step into a better shopping experience, and subscribe to our newsletter to receive 10% off your first order!
+        </p>
+        
+        </article class=" card">
+        <ul>
+            <li>Zaara Abayas and burkha</li>
+            <li>Zaara Footwear</li>
+            <li>Zaara purse</li>
+            <li>
+                Womens fashion
+            </li>
+            <li>Activewear and Footwear </li>
+            <li>Consumer Electronics and Smartphones</li>
+            <li>Audio and Wearables</li>
+            <li>Footwear and Everyday Style</li>
+            <li>Apple and Samsung</li>
+            <li>Skincare Brands</li>
+            <li>Makeup and Cosmetics Brands</li>
+
+            
+        </ul>
+
+
+
+        <iframe src="https://youtube.com/shorts/teDl30D1rPI?si=Thg4HhvVfa1DeGOZ"></iframe>
+
+        <iframe src="https://youtube.com/shorts/w-9A9peVD-8?si=LOBxLABROsep5iO4" frameborder="0"></iframe>
+        </section>
+       <section id="Contact">
+        <h2>Contact us</h2>
+        
+        <p> Email : zaara@123#</p>
+        <p>Phone no : 21379965432</p>
+         
+       
+    </section>
+    <section id="Location" >
+        <h2>Located At 
+
+        </h2>
+        <p> Address : Bhiwandi, Ahemedpur, Maharashtra</p>
+        <p>Location : Main Road, Ahemedpur,Maharashtra.</p>
+       
+        
+    </section>
+
+    
+
+    <script src="registration.js"></script>
+    </main>
+    <footer> 2025 ZaarabrandAhemedpur All rights branded products and online selling. </footer>
+      
+    
+</div>
+
+</main>
+
+
+
+
+
+</body>
+</html>

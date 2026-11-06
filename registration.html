@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> login page </title>
+    <link rel="stylesheet" href="registration.css">
+    
+</head>
+<body>
+    
+  <div class="login-container">
+
+
+    <!-- Registration Section -->
+<section class="section registration" id="register">
+    <h2  >Customer Registration</h2>
+    <p >
+        Fill in your details to apply for a products buy.
+    </p>
+    <form id="registrationForm">
+        <label for="name">Customer Full Name</label>
+        <input
+            type="text"
+            id="name"
+            name="Customer name"
+            placeholder="Enter your full name"
+            required>
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required>
+        <label for="phone">Mobile Number</label>
+        <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter 10-digit mobile number"
+            pattern="[0-9]{10}"
+            title="Enter a 10-digit mobile number"
+            required>
+        <label for="course">product Name</label>
+        <input
+            type="text"
+            id="course"
+            name="products"
+            placeholder="Example: Lipstick"
+            required>
+        <label for="product">Select Type</label>
+        <select id="product" name="roomType" required>
+            <option value="">-- Select product --</option>
+            <option value="Makeup">Makeup</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Heels">Heels</option>
+        </select>
+        
+        <label for="address">Enter your address</label>
+        <input
+            type="address"
+            id="address"
+            name="Enter your address"
+            required>
+             
+            <label for="items">Select items</label>
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Enter 9 digit item number "
+            pattern="[1-9] {9}"
+            title="Enter a 9 items select "
+            required>
+
+
+        <button type="submit" class="button">
+            login button
+        </button>
+        <button type="reset" class="button">
+            cancel
+        </button>
+
+    </form>
+    <div>
+        <a href="index.html">
+    <button type="reset">Back To Home</button></a>
+       </div>
+    </div>
+    <script src="registration.js"></script>
+</section>
+</body>
+</html>

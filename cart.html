@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | ZARA Style & Beauty</title>
+    <script src="cart.java"></script>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: pink;
+            color:darkblue;
+        }
+
+        header {
+            background: wheat;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h2 {
+            letter-spacing: 4px;
+            margin: 0;
+        }
+
+        a {
+            color: darkblue;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 30px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            background:wheat;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+        }
+
+        .product-info h3 {
+            margin-top: 0;
+        }
+
+        .quantity {
+            width: 55px;
+            padding: 8px;
+        }
+
+        .remove {
+            border: none;
+            background: none;
+            color: darkblue;
+            cursor: pointer;
+        }
+
+        .summary {
+            background: wheat;
+            padding: 25px;
+            margin-top: 25px;
+            text-align: right;
+        }
+
+        .checkout {
+            background:darkblue;
+            color: wheat;
+            border: none;
+            padding: 14px 25px;
+            cursor: pointer;
+        }
+
+        .checkout:hover {
+            background: darkgreen;
+        }
+
+        .empty {
+            background: wheat;
+            padding: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .cart-item {
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+
+            header {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>ZARA</h2>
+    <a href="index.html"> <- Continue Shopping</a>
+</header>
+
+<main>
+    <h1>My Shopping Cart 🛍️</h1>
+
+    <div id="cartItems"></div>
+
+    <div class="summary">
+        <h3>Total: ₹<span id="total">0</span></h3>
+        <button class="checkout" onclick="checkout()">
+            PROCEED TO CHECKOUT
+        </button>
+    </div>
+</main>
+
+<script>
+    function getCart() {
+        return JSON.parse(localStorage.getItem("fashionCart") || "[]");
+    }
+
+    function saveCart(cart) {
+        localStorage.setItem("fashionCart", JSON.stringify(cart));
+    }
+
+    function renderCart() {
+        const cart = getCart();
+        const container = document.getElementById("cartItems");
+        let total = 0;
+
+        container.innerHTML = "";
+
+        if (cart.length === 0) {
+            container.innerHTML = `
+                
+
+                    <h3>Your cart is empty!</h3>
+                    <p>Add your favourite fashion and beauty products.</p>
+                    <a href="index.html">Start Shopping</a>
+                </div>`;
+        }
+
+        cart.forEach((item, index) => {
+            const price = Number(item.price) || 0;
+            const quantity = Math.max(1, Number(item.quantity) || 1);
+            total += price * quantity;
+
+            container.innerHTML += `
+                <div class="cart-item">
+                    <div class="product-info">
+                        <h3>${escapeHTML(item.name)}</h3>
+                        <p>Price: ₹${price.toFixed(2)}</p>
+                    </div>
+
+                    <div>
+                        <label>
+                            Qty:
+                            <input class="quantity"
+                                type="number" min="1" max="99"
+                                value="${quantity}"
+                                onchange="changeQuantity(${index}, this.value)">
+                        </label>
+                    </div>
+
+                    <button class="remove"
+                        onclick="removeItem(${index})">
+                        Remove
+                    </button>
+                </div>`;
+        });
+
+        document.getElementById("total").textContent =
+            total.toFixed(2);
+    }
+
+    function escapeHTML(value) {
+        return String(value).replace(/[&<>"']/g, char => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;"
+        })[char]);
+    }
+
+    function changeQuantity(index, value) {
+        const cart = getCart();
+        const quantity = Math.floor(Number(value));
+
+        if (!Number.isFinite(quantity) || quantity < 1 || quantity > 99) {
+            renderCart();
+            return;
+        }
+
+        cart[index].quantity = quantity;
+        saveCart(cart);
+        renderCart();
+    }
+
+    function removeItem(index) {
+        const cart = getCart();
+        cart.splice(index, 1);
+        saveCart(cart);
+        renderCart();
+    }
+
+    function checkout() {
+        if (getCart().length === 0) {
+            alert("Your cart is empty!");
+            return;
+        }
+
+        alert("Checkout demo! Real orders and payments are not connected yet.");
+    }
+
+    renderCart();
+</script>
+
+</body>
+</html>
